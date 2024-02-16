@@ -41,6 +41,10 @@ public class Expense implements Parent {
         listOfCategory.add(category);
     }
 
+    public ArrayList<String> getCategoryList() {
+        return listOfCategory;
+    }
+
     public ArrayList<Integer> categoryExpense(String category) {
         int i = 0;
         listExpenseCategoryWise.clear();
