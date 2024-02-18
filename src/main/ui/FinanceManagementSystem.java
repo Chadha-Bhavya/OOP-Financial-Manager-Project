@@ -3,21 +3,24 @@ package ui;
 import java.util.*;
 import model.*;
 
+// Finance Management System
 public class FinanceManagementSystem {
 
     private Scanner input = new Scanner(System.in);
-    private Income income = new Income();
+    private Earning earning = new Earning();
     private Expense expense = new Expense();
     private boolean bool = false;
-    private Special special;
+    private ExpenseLimit expenseLimit;
 
+
+    //EFFECTS: runs the FinanceManagement System Application
     public FinanceManagementSystem() {
         runSystem();
     }
 
 
-
-
+    // MODIFIES: this
+    // EFFECTS: processes user input
     private void runSystem() {
         boolean keepGoing = true;
         String command = null;
@@ -25,9 +28,8 @@ public class FinanceManagementSystem {
 
         while (keepGoing) {
 
-            if ((bool) &&  (special.exceededBudget(expense.getExpense()))) {
-                System.out.println("");
-                System.out.println("ALERT! BUDGET LIMIT EXCEDED EITHER SPEND LESS OR INCREASE LIMIT!");
+            if ((bool) &&  (expenseLimit.exceededExpense(expense.getExpense()))) {
+                System.out.println("ALERT! EXPENSE LIMIT EXCEEDED EITHER SPEND LESS OR INCREASE LIMIT!");
             }
 
             displayMenu();
@@ -44,19 +46,21 @@ public class FinanceManagementSystem {
         System.out.println("GoodBye!");
     }
 
-
+    // EFFECTS: displays menu of options to user
     private void displayMenu() {
         System.out.println("\nSelect from:");
-        System.out.println("\ta -> Add Income");
-        System.out.println("\ts -> Subtract Expense");
-        System.out.println("\ti -> View Income");
+        System.out.println("\ta -> Add Earning");
+        System.out.println("\ts -> Add Expense");
+        System.out.println("\ti -> View Earning");
         System.out.println("\te -> View Expense");
-        System.out.println("\tb-> View Budget");
-        System.out.println("\tl-> SetLimit");
-        System.out.println("\tc-> categoryExpense");
-        System.out.println("\tq -> quit");
+        System.out.println("\tb-> View Net Earning");
+        System.out.println("\tl-> Set Expense Limit");
+        System.out.println("\tc-> View Expenses by Category");
+        System.out.println("\tq -> Quit");
     }
 
+
+    // EFFECTS: displays menu of category to user and returns the result of processCategory() method
     private String displayMenu2() {
         System.out.println("\nSelect from:");
         System.out.println("\th-> Housing");
@@ -65,6 +69,11 @@ public class FinanceManagementSystem {
         System.out.println("\tt -> Transportation");
         System.out.println("\ti-> HealthCare and Insurance");
         System.out.println("\tm -> Miscellaneous");
+        return processCategory();
+    }
+
+    // EFFECTS: takes input from user and returns the category selected by user
+    private String processCategory() {
         String command2 = null;
         command2 = input.next();
         command2 = command2.toLowerCase();
@@ -83,22 +92,24 @@ public class FinanceManagementSystem {
         }
     }
 
+    // MODIFIES: this
+    // EFFECTS: processes user command
     private void processCommand(String val) {
         int amount;
         String category;
         if (val.equals("a")) {
-            addingIncome();
+            addEarning();
         } else if (val.equals("s")) {
-            subtractingExpense();
+            addExpense();
         } else if (val.equals("i")) {
-            System.out.println(income.view());
+            System.out.println(earning.view());
         } else if (val.equals("e")) {
             System.out.println(expense.view());
         } else if (val.equals("b")) {
-            amount = (income.getIncome() - expense.getExpense());
+            amount = (earning.getEarning() - expense.getExpense());
             System.out.println(amount);
         } else if (val.equals("l")) {
-            budgetLimit();
+            expenseLimit();
         } else if (val.equals("c")) {
             category = displayMenu2();
             System.out.println(expense.categoryExpense(category));
@@ -108,18 +119,22 @@ public class FinanceManagementSystem {
 
     }
 
-    private void addingIncome() {
+    // MODIFIES: this
+    // EFFECTS: adds user earning to the system
+    private void addEarning() {
         int amount;
-        System.out.println("Enter amount to add: $");
+        System.out.print("Enter amount to add to earning: $");
         amount = input.nextInt();
-        income.addMoney(amount);
+        earning.addMoney(amount);
         System.out.println("Job Done!");
     }
 
-    private void subtractingExpense() {
+    // MODIFIES: this
+    // EFFECTS: adds user expense to the system
+    private void addExpense() {
         int amount;
         String category;
-        System.out.println("Enter amount to subtract: $");
+        System.out.print("Enter amount to add to expense: $");
         amount = input.nextInt();
         category = displayMenu2();
         expense.addMoney(amount);
@@ -127,11 +142,13 @@ public class FinanceManagementSystem {
         System.out.println("Job Done!");
     }
 
-    private void budgetLimit() {
+    // MODIFIES: this
+    // EFFECTS: sets user expense limit in the system
+    private void expenseLimit() {
         int amount;
-        System.out.println("Enter Budget Limit: $");
+        System.out.print("Enter Expense Limit: $");
         amount = input.nextInt();
-        special = new Special(amount);
+        expenseLimit = new ExpenseLimit(amount);
         bool = true;
     }
 

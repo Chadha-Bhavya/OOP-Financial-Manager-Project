@@ -7,4 +7,5 @@ public interface Parent {
 
     public ArrayList<Integer> view();
 
+
 }
