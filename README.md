@@ -33,13 +33,13 @@ and usability as the application evolves.
 
 ## User Stories ##
 
-- As a user, I would be able to add my income to my budget.
-- As a user, I would be able to subtract my expensed from my budget.
-- As a user, I would be able to view all my earnings in my budget.
-- As a user, I would be able to view all my expenses in my budget.
-- As a user, I can categorize financial transactions based on categories like 
-grocery, housing, transportation, insurance, recreation and entertainment, medical,
-and miscellaneous.
-- As a user, I can set my expenses budget and the system will warn me if I cross
-my budget limit.
-
+- As a user, I would be able to add my earnings to the finance management system.
+- As a user, I would be able to add my expenses to the finance management system.
+- As a user, I would be able to view all my past earnings in the finance management system.
+- As a user, I would be able to view all my past expenses in the finance management system.
+- As a user, I can categorize financial transactions/expenses  based on categories like
+  Housing, Food, Recreation, Transportation, HealthCare and Insurance and Miscellaneous
+- As a user, I would be able to view my expenses based on specific categories to help me understand 
+my finance at a better level.
+- As a user, I can set my expenses limit and the system will warn me if I cross
+my expenses limit.
