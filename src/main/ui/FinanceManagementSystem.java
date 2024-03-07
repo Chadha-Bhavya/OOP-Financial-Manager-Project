@@ -104,7 +104,6 @@ public class FinanceManagementSystem {
     // MODIFIES: this
     // EFFECTS: processes user command
     private void processCommand(String val) {
-        int amount;
         String category;
         if (val.equals("a")) {
             addEarning();
@@ -115,8 +114,7 @@ public class FinanceManagementSystem {
         } else if (val.equals("e")) {
             System.out.println(expense.view());
         } else if (val.equals("b")) {
-            amount = (earning.getEarning() - expense.getExpense());
-            System.out.println(amount);
+            System.out.println((earning.getEarning() - expense.getExpense()));
         } else if (val.equals("l")) {
             expenseLimit();
         } else if (val.equals("c")) {

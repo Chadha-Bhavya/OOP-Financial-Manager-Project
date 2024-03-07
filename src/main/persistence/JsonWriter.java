@@ -1,4 +1,5 @@
 package persistence;
+
 import model.Earning;
 import model.Expense;
 import model.ExpenseLimit;
