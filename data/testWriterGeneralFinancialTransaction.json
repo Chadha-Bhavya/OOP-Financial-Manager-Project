@@ -1,15 +1,15 @@
 {
-    "expenseLimit": 10000,
+    "expenseLimit": 1000,
     "listOfExpenses": [
-        500,
-        300
+        800,
+        200
     ],
     "listOfCategory": [
         "Housing",
-        "Recreation"
+        "Food"
     ],
     "listOfEarning": [
-        600,
-        300
+        400,
+        500
     ]
 }
