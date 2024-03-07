@@ -1,7 +1,10 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 //Represents Expense Limit of the user
-public class ExpenseLimit {
+public class ExpenseLimit implements Writable {
 
     private int expenseLimit;
 
@@ -25,6 +28,7 @@ public class ExpenseLimit {
     public void setExpenseLimit(int expenseLimit) {
         this.expenseLimit = expenseLimit;
     }
+
 
 
 

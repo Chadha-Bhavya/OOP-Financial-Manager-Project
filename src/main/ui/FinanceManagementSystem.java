@@ -1,7 +1,11 @@
 package ui;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
 import model.*;
+import persistence.JsonReader;
+import persistence.JsonWriter;
 
 // Finance Management System
 public class FinanceManagementSystem {
@@ -11,6 +15,9 @@ public class FinanceManagementSystem {
     private Expense expense = new Expense();
     private boolean bool = false;
     private ExpenseLimit expenseLimit;
+    private JsonWriter jsonWriter = new JsonWriter(JSON_STORE);
+    private JsonReader jsonReader = new JsonReader(JSON_STORE);
+    private static final String JSON_STORE = "./data/appdata.json";
 
 
     //EFFECTS: runs the FinanceManagement System Application
@@ -56,6 +63,8 @@ public class FinanceManagementSystem {
         System.out.println("\tb-> View Net Earning");
         System.out.println("\tl-> Set Expense Limit");
         System.out.println("\tc-> View Expenses by Category");
+        System.out.println("\t1 -> save work room to file");
+        System.out.println("\t2 -> load work room to file");
         System.out.println("\tq -> Quit");
     }
 
@@ -113,6 +122,10 @@ public class FinanceManagementSystem {
         } else if (val.equals("c")) {
             category = displayMenu2();
             System.out.println(expense.categoryExpense(category));
+        } else if (val.equals("1")) {
+            saveExpense();
+        } else if (val.equals("2")) {
+            loadExpense();
         } else {
             System.out.println("Please select the right key");
         }
@@ -150,6 +163,31 @@ public class FinanceManagementSystem {
         amount = input.nextInt();
         expenseLimit = new ExpenseLimit(amount);
         bool = true;
+    }
+
+    // EFFECTS: saves the workroom to file
+    private void saveExpense() {
+        try {
+            jsonWriter.open();
+            jsonWriter.write(earning, expense, expenseLimit);
+            jsonWriter.close();
+            System.out.println("Saved your Financial Transaction to " + JSON_STORE);
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to file: " + JSON_STORE);
+        }
+    }
+
+    // MODIFIES: this
+    // EFFECTS: loads workroom from file
+    private void loadExpense() {
+        try {
+            earning = jsonReader.readEarning();
+            expense = jsonReader.readExpense();
+            expenseLimit = jsonReader.readExpenseLimit();
+            bool = true;
+        } catch (IOException e) {
+            System.out.println("Loaded your Financial Transaction from" + JSON_STORE);
+        }
     }
 
 }

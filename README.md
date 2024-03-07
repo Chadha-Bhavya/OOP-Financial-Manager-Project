@@ -43,3 +43,5 @@ and usability as the application evolves.
 my finance at a better level.
 - As a user, I can set my expenses limit and the system will warn me if I cross
 my expenses limit.
+- As a user, I would be able to save my financial transactions if I wish to do so.
+- As a user, I would be able to load my financial transactions if I wish to do so - when I restart the application.

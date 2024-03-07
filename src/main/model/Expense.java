@@ -1,9 +1,12 @@
 package model;
 
+import org.json.JSONObject;
+import persistence.Writable;
+
 import java.util.ArrayList;
 
 //Represents Expenses of the user along with the category of expense
-public class Expense implements Parent {
+public class Expense implements Parent, Writable {
 
     private int expense;
     private ArrayList<Integer> listOfExpense = new ArrayList<>();
@@ -80,5 +83,11 @@ public class Expense implements Parent {
         return listExpenseCategoryWise;
 
     }
+
 }
+
+
+
+
+
 
