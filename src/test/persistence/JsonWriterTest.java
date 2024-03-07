@@ -13,9 +13,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class JsonWriterTest {
 
-    Earning earning;
-    Expense expense;
-    ExpenseLimit expenseLimit;
+    private Earning earning;
+    private Expense expense;
+    private ExpenseLimit expenseLimit;
 
     @BeforeEach
 
@@ -37,7 +37,7 @@ class JsonWriterTest {
     }
 
     @Test
-    void testWriterEmptyWorkroom() {
+    void testWriterEmptyFinanceManagementSystem() {
         try {
             JsonWriter writer = new JsonWriter("./data/testWriterNoFinancialTransaction.json");
             writer.open();
