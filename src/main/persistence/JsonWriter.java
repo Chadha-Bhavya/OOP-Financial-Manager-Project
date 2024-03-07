@@ -8,7 +8,7 @@ import org.json.JSONObject;
 
 import java.io.*;
 
-// Represents a writer that writes JSON representation of workroom to file
+// Represents a writer that writes JSON representation of Finance Management System to file
 public class JsonWriter {
     private static final int TAB = 4;
     private PrintWriter writer;
@@ -27,7 +27,7 @@ public class JsonWriter {
     }
 
     // MODIFIES: this
-    // EFFECTS: writes JSON representation of Earning to file
+    // EFFECTS: writes JSON representation of Earning, Expense and ExpenseLimit to file
     public void write(Earning earning, Expense expense, ExpenseLimit expenseLimit) {
         JSONObject json = earning.toJson();
         json = expense.toJson(json);

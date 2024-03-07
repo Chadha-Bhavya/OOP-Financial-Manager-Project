@@ -2,7 +2,7 @@
 <project version="4">
   <component name="CheckStyle-IDEA" serialisationVersion="2">
     <checkstyleVersion>10.2</checkstyleVersion>
-    <scanScope>JavaOnly</scanScope>
+    <scanScope>JavaOnlyWithTests</scanScope>
     <option name="thirdPartyClasspath" />
     <option name="activeLocationIds">
       <option value="fe9bd23b-4112-4370-ac98-b70a3a4bb939" />

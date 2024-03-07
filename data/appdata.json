@@ -2,11 +2,13 @@
     "expenseLimit": 10000,
     "listOfExpenses": [
         500,
-        300
+        300,
+        899
     ],
     "listOfCategory": [
         "Housing",
-        "Recreation"
+        "Recreation",
+        "Miscellaneous"
     ],
     "listOfEarning": [
         600,

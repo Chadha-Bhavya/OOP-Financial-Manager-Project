@@ -32,6 +32,10 @@ class JsonReaderTest{
             Earning earning = reader.readEarning();
             Expense expense = reader.readExpense();
             ExpenseLimit expenseLimit = reader.readExpenseLimit();
+            assertEquals(0, earning.view().size());
+            assertEquals(0, expense.view().size());
+            assertEquals(0, expense.getCategoryList().size());
+            assertEquals(-1, expenseLimit.getExpenseLimit());
         } catch (IOException e) {
             fail("Couldn't read from file");
         }

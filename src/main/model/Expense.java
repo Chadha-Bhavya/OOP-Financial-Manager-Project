@@ -83,6 +83,7 @@ public class Expense implements Parent {
 
     }
 
+    // EFFECTS: returns this as JSON object
     public JSONObject toJson(JSONObject json) {
         json.put("listOfExpenses", view());
         json.put("listOfCategory", getCategoryList());

@@ -50,6 +50,7 @@ public class Earning implements Parent {
     }
 
 
+    // EFFECTS: returns this as JSON object
     public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("listOfEarning", listOfEarning);
