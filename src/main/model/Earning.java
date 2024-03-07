@@ -2,12 +2,11 @@ package model;
 
 
 import org.json.JSONObject;
-import persistence.Writable;
 
 import java.util.*;
 
 //Represents Earning of the user
-public class Earning implements Parent, Writable {
+public class Earning implements Parent {
 
     private int earning;
     private ArrayList<Integer> listOfEarning = new ArrayList<>();
@@ -50,12 +49,10 @@ public class Earning implements Parent, Writable {
         listOfEarning.add(amount);
     }
 
-    public JSONObject toJson(Expense expense, ExpenseLimit expenseLimit) {
+
+    public JSONObject toJson() {
         JSONObject json = new JSONObject();
         json.put("listOfEarning", listOfEarning);
-        json.put("listOfExpenses", expense.view());
-        json.put("listOfCategory", expense.getCategoryList());
-        json.put("expenseLimit", expenseLimit.getExpenseLimit());
         return json;
     }
 }

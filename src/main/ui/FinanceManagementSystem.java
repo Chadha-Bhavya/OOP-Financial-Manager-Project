@@ -14,7 +14,7 @@ public class FinanceManagementSystem {
     private Earning earning = new Earning();
     private Expense expense = new Expense();
     private boolean bool = false;
-    private ExpenseLimit expenseLimit;
+    private ExpenseLimit expenseLimit = new ExpenseLimit();
     private JsonWriter jsonWriter = new JsonWriter(JSON_STORE);
     private JsonReader jsonReader = new JsonReader(JSON_STORE);
     private static final String JSON_STORE = "./data/appdata.json";
@@ -161,7 +161,7 @@ public class FinanceManagementSystem {
         int amount;
         System.out.print("Enter Expense Limit: $");
         amount = input.nextInt();
-        expenseLimit = new ExpenseLimit(amount);
+        expenseLimit.setExpenseLimit(amount);
         bool = true;
     }
 

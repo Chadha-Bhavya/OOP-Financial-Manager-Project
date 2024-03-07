@@ -16,14 +16,15 @@ public class ExpenseLimitTest {
 
     void runBefore() {
 
-        expenseLimit = new ExpenseLimit(100);
+        expenseLimit = new ExpenseLimit();
 
     }
 
     @Test
     void testAllMethods() {
 
-        assertEquals(100, expenseLimit.getExpenseLimit());
+        assertEquals(-1, expenseLimit.getExpenseLimit());
+        assertFalse(expenseLimit.exceededExpense(-1));
         expenseLimit.setExpenseLimit(200);
         assertEquals(200, expenseLimit.getExpenseLimit());
         assertTrue(expenseLimit.exceededExpense(500));
