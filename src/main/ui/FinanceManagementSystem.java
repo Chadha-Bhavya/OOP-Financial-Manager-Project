@@ -163,7 +163,7 @@ public class FinanceManagementSystem {
         bool = true;
     }
 
-    // EFFECTS: saves the workroom to file
+    // EFFECTS: saves the data to file
     private void saveExpense() {
         try {
             jsonWriter.open();
@@ -176,7 +176,7 @@ public class FinanceManagementSystem {
     }
 
     // MODIFIES: this
-    // EFFECTS: loads workroom from file
+    // EFFECTS: loads data from file
     private void loadExpense() {
         try {
             earning = jsonReader.readEarning();

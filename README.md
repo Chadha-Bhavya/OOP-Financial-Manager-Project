@@ -45,3 +45,19 @@ my finance at a better level.
 my expenses limit.
 - As a user, I would be able to save my financial transactions if I wish to do so.
 - As a user, I would be able to load my financial transactions if I wish to do so - when I restart the application.
+
+# Instructions for Grader
+
+- You can add earnings by entering the amount in the `Earning` field and clicking the `Add Earning` button.
+- You can add expenses by entering the amount in the `Expense` field, the category in the `Category` field, 
+and then clicking the `Add Expense` button.
+- You can locate the visual component by running the application. A splash screen will appear for 5 seconds, 
+displaying an image that simulates the loading of the application.
+- You can save the application's state by clicking the `Save Data` button.
+- You can reload the application's state by clicking the `Load Data`button.
+- You can set your expense limit by entering the limit in the `Expense Limit` field and clicking the
+`Set Expense Limit` button. The system will warn you if the expense limit is exceeded.
+- You can view all past earnings or expenses by clicking the `View Earnings` or `View Expenses` button, respectively.
+- You can view your net earnings (total earnings - total expenses) by clicking the `Net Earning` button.
+- You can view all earnings or expenses above a certain criteria by entering the criteria in the `Criteria` field
+and then clicking the `View Earnings Above Criteria` or `View Expenses Above Criteria` button.
