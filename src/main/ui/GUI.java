@@ -1,13 +1,20 @@
 package ui;
 
+import model.Earning;
+import model.EventLog;
+import model.Expense;
+import model.ExpenseLimit;
+import persistence.JsonReader;
+import persistence.JsonWriter;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
-import model.*;
-import persistence.JsonReader;
-import persistence.JsonWriter;
+
+
+import static com.sun.java.accessibility.util.AWTEventMonitor.addWindowListener;
 
 //GUI Class for the Finance Management System
 public class GUI implements ActionListener {
@@ -51,6 +58,8 @@ public class GUI implements ActionListener {
         initializeButton();
         addComponentsToPanel();
         addPanelToFrame();
+        WindowListenerClass windowListener = new WindowListenerClass();
+        frame.addWindowListener(windowListener);
     }
 
     // MODIFIES: this

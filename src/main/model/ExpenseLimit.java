@@ -29,6 +29,7 @@ public class ExpenseLimit {
 
     public void setExpenseLimit(int expenseLimit) {
         this.expenseLimit = expenseLimit;
+        EventLog.getInstance().logEvent(new Event("New Expense Limit: " + expenseLimit));
     }
 
     // EFFECTS: returns this as JSON object

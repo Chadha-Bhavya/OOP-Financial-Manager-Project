@@ -1,8 +1,6 @@
 package persistence;
 
-import model.Earning;
-import model.Expense;
-import model.ExpenseLimit;
+import model.*;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
@@ -43,6 +41,7 @@ public class JsonReader {
     public ExpenseLimit readExpenseLimit() throws IOException {
         String jsonData = readFile(source);
         JSONObject jsonObject = new JSONObject(jsonData);
+        EventLog.getInstance().logEvent(new Event("Read the Data"));
         return parseExpenseLimit(jsonObject);
     }
 

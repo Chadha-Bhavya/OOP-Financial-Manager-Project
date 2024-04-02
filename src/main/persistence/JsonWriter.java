@@ -1,8 +1,6 @@
 package persistence;
 
-import model.Earning;
-import model.Expense;
-import model.ExpenseLimit;
+import model.*;
 import org.json.JSONObject;
 
 
@@ -33,6 +31,7 @@ public class JsonWriter {
         json = expense.toJson(json);
         json = expenseLimit.toJson(json);
         saveToFile(json.toString(TAB));
+        EventLog.getInstance().logEvent(new Event("Saved the Data"));
     }
 
     // MODIFIES: this

@@ -26,6 +26,7 @@ public class Expense implements Parent {
     public void addMoney(int amount) {
         this.expense += amount;
         addExpenseToList(amount);
+        EventLog.getInstance().logEvent(new Event("Added " + amount + " to Expense"));
     }
 
 

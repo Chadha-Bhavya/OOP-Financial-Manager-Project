@@ -25,6 +25,7 @@ public class Earning implements Parent {
     public void addMoney(int amount) {
         this.earning += amount;
         addEarningToList(amount);
+        EventLog.getInstance().logEvent(new Event("Added " + amount + " to Earning"));
     }
 
     // EFFECTS: Returns an ArrayList of all the earning added till now, empty list if no earning

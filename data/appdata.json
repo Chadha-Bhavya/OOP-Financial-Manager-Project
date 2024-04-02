@@ -1,15 +1,6 @@
 {
     "expenseLimit": -1,
-    "listOfExpenses": [
-        100,
-        200
-    ],
-    "listOfCategory": [
-        "",
-        "Housing"
-    ],
-    "listOfEarning": [
-        300,
-        500
-    ]
+    "listOfExpenses": [],
+    "listOfCategory": [],
+    "listOfEarning": []
 }
