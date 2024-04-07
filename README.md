@@ -81,7 +81,8 @@ consider implementing two additional classes in the model: `ListOfExpense` and `
 solely relying on adding lists within the `Earning` and `Expense` classes. This modification would enhance the 
 cohesion of the  codebase, making it more modular and easier to comprehend. Currently, the responsibility of 
 adding earnings/expenses and managing the associated lists rests solely with the `Earning` and `Expense` classes, 
-resulting in a somewhat convoluted structure.
+resulting in a somewhat convoluted structure. I would also implement the Iterator Design Pattern to Iterate over the
+`Earning` and `Expense`.
 
 Furthermore, I would prioritize refactoring the `GUI` and `FinancialManagementSystem` (Console) class by eliminating
 repetitive code segments for improved readability and maintainability. By reducing redundancy 
