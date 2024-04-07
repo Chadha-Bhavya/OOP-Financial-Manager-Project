@@ -61,3 +61,31 @@ displaying an image that simulates the loading of the application.
 - You can view your net earnings (total earnings - total expenses) by clicking the `Net Earning` button.
 - You can view all earnings or expenses above a certain criteria by entering the criteria in the `Criteria` field
 and then clicking the `View Earnings Above Criteria` or `View Expenses Above Criteria` button.
+
+## Phase 4: Task 2 ##
+
+- Sat Apr 06 21:26:56 PDT 2024 -> Added 300 to Earning
+- Sat Apr 06 21:26:57 PDT 2024 -> Added 200 to Expense
+- Sat Apr 06 21:27:00 PDT 2024 -> Added 500 to Earning
+- Sat Apr 06 21:27:07 PDT 2024 -> Added 1000 to Expense
+- Sat Apr 06 21:27:10 PDT 2024 -> New Expense Limit: 100000
+- Sat Apr 06 21:27:13 PDT 2024 -> Read the Data
+- Sat Apr 06 21:27:13 PDT 2024 -> New Expense Limit: -1
+- Sat Apr 06 21:27:14 PDT 2024 -> Saved the Data
+- Sat Apr 06 21:27:21 PDT 2024 -> Added 200 to Earning
+- Sat Apr 06 21:27:22 PDT 2024 -> Added 100 to Earning
+
+## Phase 4: Task 3 ##
+Reflecting on the design presented in the UML class diagram, if I had more time to work on the project, I would 
+consider implementing two additional classes in the model: `ListOfExpense` and `ListOfEarning`, rather than
+solely relying on adding lists within the `Earning` and `Expense` classes. This modification would enhance the 
+cohesion of the  codebase, making it more modular and easier to comprehend. Currently, the responsibility of 
+adding earnings/expenses and managing the associated lists rests solely with the `Earning` and `Expense` classes, 
+resulting in a somewhat convoluted structure.
+
+Furthermore, I would prioritize refactoring the `GUI` and `FinancialManagementSystem` (Console) class by eliminating
+repetitive code segments for improved readability and maintainability. By reducing redundancy 
+in the codebase, we would be able to enhance the overall clarity of the code.
+
+Although these changes would not introduce new features to the application, they 
+would significantly contribute to its long-term maintainability and comprehensibility.

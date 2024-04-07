@@ -5,6 +5,9 @@ public class Main {
 
         new SplashScreen();
         new GUI();
-        //new FinanceManagementSystem();
+        new FinanceManagementSystem();
     }
 }
+
+
+

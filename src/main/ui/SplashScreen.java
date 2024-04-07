@@ -18,7 +18,7 @@ public class SplashScreen {
     //          waits for 6 seconds, then disposes the frame
     private void display() {
         JFrame splashFrame = new JFrame();
-        JLabel splashLabel = new JLabel(new ImageIcon("data/roadSM.jpg"));
+        JLabel splashLabel = new JLabel(new ImageIcon("data/SplashScreenDesign.jpg"));
         splashFrame.getContentPane().add(splashLabel, BorderLayout.CENTER);
         splashFrame.setSize(300,200);
         splashFrame.setLocationRelativeTo(null);

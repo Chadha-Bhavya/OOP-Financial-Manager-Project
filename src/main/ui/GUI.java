@@ -1,7 +1,6 @@
 package ui;
 
 import model.Earning;
-import model.EventLog;
 import model.Expense;
 import model.ExpenseLimit;
 import persistence.JsonReader;
@@ -50,6 +49,7 @@ public class GUI implements ActionListener {
     private ExpenseLimit expenseLimit;
     private JsonWriter jsonWriter;
     private JsonReader jsonReader;
+    private WindowListenerClass windowListener;
     private static final String JSON_STORE = "./data/appdata.json";
 
     // EFFECTS: initializes frame, panel, labels, buttons, text fields, and data objects
@@ -58,7 +58,7 @@ public class GUI implements ActionListener {
         initializeButton();
         addComponentsToPanel();
         addPanelToFrame();
-        WindowListenerClass windowListener = new WindowListenerClass();
+        windowListener = new WindowListenerClass();
         frame.addWindowListener(windowListener);
     }
 
