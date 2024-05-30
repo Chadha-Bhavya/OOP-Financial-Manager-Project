@@ -25,7 +25,7 @@ public class SplashScreen {
         splashFrame.setVisible(true);
 
         try {
-            Thread.sleep(6000);
+            Thread.sleep(5000);
         } catch (Exception e) {
             // pass
         }
